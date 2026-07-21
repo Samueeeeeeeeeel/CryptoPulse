@@ -1,59 +1,83 @@
-# Cryptopulse
+# CryptoPulse Terminal
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.7.
+A professional cryptocurrency trading terminal built with Angular 22, RxJS, Tailwind CSS v4, and Docker.
 
-## Development server
+## Tech Stack
 
-To start a local development server, run:
+- **Angular 22** — Standalone Components, strict TypeScript
+- **RxJS** — Reactive data layer
+- **Tailwind CSS v4** — CSS-based configuration
+- **Docker** — Multi-stage build (Node 22 → Nginx 1.27 Alpine)
+
+## Features
+
+- Real-time crypto price simulation (8 trading pairs)
+- Canvas candlestick chart with EMA-14 and RSI-14 indicators
+- Market and limit order execution with atomic lock/unlock
+- Live portfolio PnL tracking ($10K USDT initial balance)
+- Cyber-Industrial dark theme (neon green/red/amber)
+
+## How to Run
+
+### Option 1: Docker (Recommended)
 
 ```bash
+# Clone the repository
+git clone https://github.com/Samueeeeeeeeeel/CryptoPulse.git
+cd CryptoPulse
+
+# Build and run with Docker Compose
+docker compose up -d --build
+```
+
+Open your browser and go to: **http://localhost:8080**
+
+```bash
+# Stop the container
+docker compose down
+```
+
+### Option 2: Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/Samueeeeeeeeeel/CryptoPulse.git
+cd CryptoPulse
+
+# Install dependencies
+npm install
+
+# Start the development server
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser and go to: **http://localhost:4200**
 
-## Code scaffolding
+The app will auto-reload when you edit source files.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Option 3: Build for Production
 
 ```bash
-ng generate --help
+# Build the project
+ng build --configuration production
+
+# Output will be in dist/cryptopulse/browser
 ```
 
-## Building
+## Project Structure
 
-To build the project run:
-
-```bash
-ng build
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
+src/
+├── app/
+│   ├── components/
+│   │   ├── chart/          # Canvas candlestick chart + EMA/RSI
+│   │   ├── market-table/   # Live price list (8 pairs)
+│   │   ├── navbar/         # Balance, PnL, pulse indicator
+│   │   ├── order-history/  # Active orders + history drawer
+│   │   └── trade-panel/    # Buy/Sell, Market/Limit orders
+│   └── core/
+│       ├── models/         # TypeScript interfaces
+│       └── services/       # Market, Portfolio, Order, Indicator
+├── styles.scss             # Tailwind v4 theme
+└── main.ts
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
