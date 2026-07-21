@@ -1,0 +1,28 @@
+<div class="flex flex-col h-screen bg-void overflow-hidden">
+  <app-navbar />
+
+  <div class="flex flex-1 min-h-0">
+    <div class="w-64 min-w-[256px] border-r border-slate-border">
+      <app-market-table />
+    </div>
+
+    <div class="flex-1 min-w-0 flex flex-col min-h-0">
+      <div class="flex-1 min-h-0">
+        <app-chart />
+      </div>
+      <app-order-history />
+    </div>
+
+    <div class="w-72 min-w-[288px] border-l border-slate-border">
+      <app-trade-panel />
+    </div>
+  </div>
+
+  <div class="h-6 bg-abyss border-t border-slate-border flex items-center px-3 justify-between text-[10px] text-text-muted shrink-0">
+    <span>CryptoPulse Terminal v1.0</span>
+    <div class="flex items-center gap-3">
+      <span class="mono">WS Connected</span>
+      <span class="text-neon-green">●</span>
+    </div>
+  </div>
+</div>

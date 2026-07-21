@@ -1,0 +1,11 @@
+services:
+  cryptopulse:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cryptopulse-terminal
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true

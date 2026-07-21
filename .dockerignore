@@ -1,0 +1,10 @@
+node_modules
+.git
+.gitignore
+.angular
+.vscode
+dist
+*.md
+.editorconfig
+.prettierrc
+tsconfig.spec.json
